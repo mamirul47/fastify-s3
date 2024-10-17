@@ -1,7 +1,7 @@
 {
   "name": "fastify-s3",
   "description": "Fastify 5 plugin for ensuring existence of defined AWS S3 buckets on the application startup",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "mamirul47",
@@ -35,6 +35,11 @@
     "s3-test-helper": "^1.2.1",
     "tsd": "^0.31.2",
     "undici": "^6.20.1"
+  },
+  "homepage": "http://github.com/mamirul47/fastify-s3",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mamirul47/fastify-s3.git"
   },
   "keywords": [
     "creation",
