@@ -8,7 +8,7 @@ Fastify v5 plugin for ensuring existence of defined AWS S3 buckets on the applic
 
 ```ts
 import fastify from 'fastify';
-import { fastifyS3BucketsPlugin } from 'fastify-s3-buckets';
+import { fastifyS3BucketsPlugin } from 'fastify-s3';
 import { S3Client } from '@aws-sdk/client-s3'
 
 const s3Config = {
