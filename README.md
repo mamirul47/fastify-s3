@@ -6,31 +6,34 @@ Fastify v5 plugin for ensuring existence of defined AWS S3 buckets on the applic
 
 ## How to use?
 
+```bash
+npm install fastify-s3 @aws-sdk/client-s3 
+```
+Create file s3.ts ( if using fastify-cli to generate project please create file inside src/plugins/s3.ts )
+
 ```ts
-import fastify from 'fastify';
-import { fastifyS3BucketsPlugin } from 'fastify-s3';
-import { S3Client } from '@aws-sdk/client-s3'
+import fp from 'fastify-plugin'
+import { fastifyS3BucketsPlugin, BucketConfiguration } from 'fastify-s3';
+import { S3Client , S3ClientConfigType } from '@aws-sdk/client-s3'
 
-const s3Config = {
-    endpoint: 'http://s3.localhost.localstack.cloud:4566',
-    region: 'eu-west-1',
-    credentials: {
-        accessKeyId: 'access',
-        secretAccessKey: 'secret',
-    },
-}
-const s3Client = new S3Client(s3Config)
-
-const app = fastify()
-app.register(fastifyS3BucketsPlugin, {
-    s3Client,
-    buckets: [
-        { Bucket: 'abc', ACL: 'private' },
-        { Bucket: 'def', ACL: 'public-read' },
-        { Bucket: 'ghi', ACL: 'private' }
-    ],
+export default fp<BucketConfiguration>(async (fastify) => {
+    const s3Config : S3ClientConfigType = {
+        endpoint: 'https://<host>:<port>',
+        forcePathStyle: true,
+        region: '<region>',
+        credentials: {
+            accessKeyId: '<access_key>',
+            secretAccessKey: '<secret_access_key>',
+        },
+    }
+    const s3Client = new S3Client(s3Config)
+    fastify.register(fastifyS3BucketsPlugin, {
+        s3Client,
+        buckets: [
+            { Bucket: '<bucket_name>', ACL: 'public-read-write' },
+        ]
+    })
 })
-await app.ready() // missing buckets will be created here
 
 ```
 
