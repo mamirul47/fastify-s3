@@ -1,3 +1,8 @@
+## Acknowledgements
+
+This project is based on [fastify-s3-buckets](https://github.com/kibertoad/fastify-s3-buckets.git) by [kibertoad](https://github.com/kibertoad).
+
+
 # fastify-s3
 Fastify v5 plugin for ensuring existence of defined AWS S3 buckets on the application startup.
 
