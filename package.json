@@ -1,7 +1,7 @@
 {
   "name": "fastify-s3",
   "description": "Fastify 5 plugin for ensuring existence of defined AWS S3 buckets on the application startup",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "mamirul47",
@@ -22,19 +22,19 @@
     "fastify-plugin": "^5.0.1"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.673.0",
-    "@aws-sdk/s3-request-presigner": "^3.673.0",
-    "@types/jest": "^29.5.13",
-    "@types/node": "^22.7.6",
-    "eslint": "^9.12.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "fastify": "^5.0.0",
-    "jest": "^29.7.0",
-    "prettier": "^3.3.3",
+    "@aws-sdk/client-s3": "^3.873.0",
+    "@aws-sdk/s3-request-presigner": "^3.873.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.3.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "fastify": "^5.5.0",
+    "jest": "^30.0.5",
+    "prettier": "^3.6.2",
     "s3-test-helper": "^1.2.1",
-    "tsd": "^0.31.2",
-    "undici": "^6.20.1"
+    "tsd": "^0.33.0",
+    "undici": "^7.15.0"
   },
   "homepage": "http://github.com/mamirul47/fastify-s3",
   "repository": {
